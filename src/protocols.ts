@@ -12,14 +12,6 @@ export type RequestError = {
   message: string;
 };
 
-export type NewCredential = {
-  userId:  number,
-  title:   String,
-  url:      String,
-  username: String,
-  password: String
-}
-
 export type Credential = {
   id: number,
   userId:  number,
@@ -28,5 +20,15 @@ export type Credential = {
   username: String,
   password: String
 }
+
+export type NewCredential = {
+  userId:  number,
+  title:   String,
+  url:      String,
+  username: String,
+  password: String
+}
+
+
 
 export type NewUser = Omit<User, "id" | "Credential">
