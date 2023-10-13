@@ -1,8 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import { ObjectSchema } from 'joi';
-import { invalidDataError } from '../errors/invalid-data.error';
 import * as jwt from 'jsonwebtoken';
-import { unauthorizedError } from '../errors/index';
+import { unauthorizedError, invalidDataError } from '../errors/index';
 import { authRepository } from '@/repositories';
 
 type ValidateMiddleware = (req: Request, res: Response, next: NextFunction) => void;
