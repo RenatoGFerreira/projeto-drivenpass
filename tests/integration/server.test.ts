@@ -1,7 +1,14 @@
-import server from "../../src/server"
+import server, {init} from "../../src/server"
 import supertest from "supertest"
+import {cleanDb} from "./helpers"
 
 const app = supertest(server)
+
+
+beforeAll(async () => {
+  await init();
+  await cleanDb();
+});
 
 
 describe("User tests", ()=>{
