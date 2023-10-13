@@ -1,7 +1,12 @@
+import { validateBody, validateToken } from "@/middlewares";
+import { credentialSchema } from "@/schema";
 import { Router } from "express";
 
 const credentialRouter = Router();
 
-credentialRouter.all('/*').post('/').get('/:id').delete('/:id')
+credentialRouter.all('/*', validateToken)
+.post('/create', validateBody(credentialSchema))
+.get('/:id')
+.delete('/:id')
 
 export { credentialRouter }
